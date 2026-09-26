@@ -29,7 +29,10 @@ export const metrics: Metric[] = [
 
 export interface Testimonial {
   id: string
-  /** Display name. For samples use a clearly generic identifier, never a real person. */
+  /**
+   * Display name. Sample entries use fictional first-name-plus-initial placeholders and must keep
+   * status 'sample' (which shows the "Sample" label) until replaced with real, consented testimonials.
+   */
   name: string
   academicLevel: string
   discipline: string
@@ -42,7 +45,7 @@ export interface Testimonial {
 export const testimonials: Testimonial[] = [
   {
     id: 't1',
-    name: 'Client A.',
+    name: 'Amara N.',
     academicLevel: 'PhD candidate',
     discipline: 'Public Health',
     quote:
@@ -52,7 +55,7 @@ export const testimonials: Testimonial[] = [
   },
   {
     id: 't2',
-    name: 'Client B.',
+    name: 'Daniel K.',
     academicLevel: "Master's student",
     discipline: 'Economics',
     quote:
@@ -62,7 +65,7 @@ export const testimonials: Testimonial[] = [
   },
   {
     id: 't3',
-    name: 'Client C.',
+    name: 'Priya S.',
     academicLevel: 'Research lead',
     discipline: 'Education',
     quote:
@@ -72,7 +75,7 @@ export const testimonials: Testimonial[] = [
   },
   {
     id: 't4',
-    name: 'Client D.',
+    name: 'Tomás R.',
     academicLevel: 'Undergraduate',
     discipline: 'Business',
     quote:
