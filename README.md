@@ -18,6 +18,7 @@ Vite + React 19 + TypeScript + React Router 7. Plain CSS with design tokens (no 
 | `/academic-integrity` | What we do / don't do, policy in practice |
 | `/faq` | All questions grouped by category (+ FAQPage JSON-LD) |
 | `/start` | Project builder and what happens next |
+| `/messages` | Enquiries inbox (Live Chat) — conversations, bubbles, quick actions, composer |
 | `/contact` | Contact form (topics incl. privacy requests, `?topic=privacy`), channels, shortcuts |
 | `/privacy` | Privacy Policy (`src/data/legal.ts`) |
 | `/terms` | Terms of Service (`src/data/legal.ts`) |
@@ -101,6 +102,13 @@ contact/newsletter open the visitor's email client. The client estimate is sent 
 only — the server must re-price.
 
 `VITE_PORTAL_URL` turns "Sign In" into a link to the client dashboard.
+
+**Live chat (`/messages`)** uses the `ChatClient` interface in `src/services/chat.ts`. With the API
+configured it calls `GET/POST /api/conversations`, `GET/POST /api/conversations/:id/messages`,
+`POST /api/conversations/:id/read` and `POST /api/conversations/:id/status`, polling every 15s for
+replies. Without it, conversations are stored in the visitor's browser, messages are marked
+"not delivered", and "Email thread" hands the conversation to the visitor's email client — no
+replies are ever simulated. File attachments are disabled until an upload endpoint exists.
 
 ## Content that must be replaced before launch
 

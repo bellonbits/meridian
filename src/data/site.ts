@@ -54,6 +54,7 @@ export const routes = {
   faq: '/faq',
   start: '/start',
   contact: '/contact',
+  messages: '/messages',
   privacy: '/privacy',
   terms: '/terms',
 } as const

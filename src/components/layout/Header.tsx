@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
-import { NavLink } from 'react-router'
+import { Link, NavLink } from 'react-router'
 import { useAppActions } from '../../context/AppActions'
-import { primaryNav } from '../../data/site'
+import { primaryNav, routes } from '../../data/site'
 import { useScrolledPast } from '../../hooks/useScrollPosition'
 import { cx } from '../../utils/cx'
 import { Button } from '../ui/Button'
@@ -16,7 +16,7 @@ const PORTAL_URL = import.meta.env.VITE_PORTAL_URL
 export function Header() {
   const scrolled = useScrolledPast(12)
   const [menuOpen, setMenuOpen] = useState(false)
-  const { startProject, openContact, openSearch } = useAppActions()
+  const { startProject, openSearch } = useAppActions()
   const notify = useToast()
 
   // ⌘K / Ctrl+K opens search.
@@ -59,11 +59,11 @@ export function Header() {
           <button type="button" className="header__icon-btn" onClick={openSearch} aria-label="Search the site (Ctrl+K)">
             <Icon name="search" size={19} />
           </button>
-          <button type="button" className="header__chat" onClick={openContact}>
+          <Link to={routes.messages} className="header__chat">
             <span className="header__chat-dot" aria-hidden="true" />
             <Icon name="chat" size={18} />
             <span>Live Chat</span>
-          </button>
+          </Link>
           {PORTAL_URL ? (
             <a href={PORTAL_URL} className="header__signin">
               Sign In

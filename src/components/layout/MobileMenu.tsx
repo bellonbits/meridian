@@ -1,5 +1,5 @@
 import { useAppActions } from '../../context/AppActions'
-import { primaryNav, site } from '../../data/site'
+import { primaryNav, routes, site } from '../../data/site'
 import { NavLink } from 'react-router'
 import { cx } from '../../utils/cx'
 import { Button } from '../ui/Button'
@@ -15,7 +15,7 @@ interface MobileMenuProps {
 }
 
 export function MobileMenu({ open, onClose, onSignIn, portalUrl }: MobileMenuProps) {
-  const { startProject, openContact, openSearch } = useAppActions()
+  const { startProject, openSearch } = useAppActions()
 
   const run = (action: () => void) => () => {
     onClose()
@@ -48,7 +48,7 @@ export function MobileMenu({ open, onClose, onSignIn, portalUrl }: MobileMenuPro
           Start a Project
         </Button>
         <div className="mobile-menu__row">
-          <Button variant="secondary" icon="chat" block onClick={run(openContact)}>
+          <Button variant="secondary" icon="chat" block to={routes.messages} onClick={onClose}>
             Live Chat
           </Button>
           <Button variant="secondary" icon="search" block onClick={run(openSearch)}>
