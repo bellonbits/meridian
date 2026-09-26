@@ -10,11 +10,10 @@ import './MobileMenu.css'
 interface MobileMenuProps {
   open: boolean
   onClose: () => void
-  onSignIn: () => void
   portalUrl?: string
 }
 
-export function MobileMenu({ open, onClose, onSignIn, portalUrl }: MobileMenuProps) {
+export function MobileMenu({ open, onClose, portalUrl }: MobileMenuProps) {
   const { startProject, openSearch } = useAppActions()
 
   const run = (action: () => void) => () => {
@@ -60,7 +59,7 @@ export function MobileMenu({ open, onClose, onSignIn, portalUrl }: MobileMenuPro
             Sign In
           </Button>
         ) : (
-          <Button variant="ghost" block onClick={run(onSignIn)}>
+          <Button variant="ghost" block to={routes.signIn} onClick={onClose}>
             Sign In
           </Button>
         )}

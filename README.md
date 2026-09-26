@@ -18,6 +18,8 @@ Vite + React 19 + TypeScript + React Router 7. Plain CSS with design tokens (no 
 | `/academic-integrity` | What we do / don't do, policy in practice |
 | `/faq` | All questions grouped by category (+ FAQPage JSON-LD) |
 | `/start` | Project builder and what happens next |
+| `/sign-in` | Client sign-in (password or email link) — `src/services/auth.ts` |
+| `/portal` | Client workspace: projects (API) or on-device draft, enquiries, next steps, guides |
 | `/messages` | Enquiries inbox (Live Chat) — conversations, bubbles, quick actions, composer |
 | `/contact` | Contact form (topics incl. privacy requests, `?topic=privacy`), channels, shortcuts |
 | `/privacy` | Privacy Policy (`src/data/legal.ts`) |
@@ -101,7 +103,10 @@ Without it, nothing is faked: the brief modal produces a formatted brief to emai
 contact/newsletter open the visitor's email client. The client estimate is sent for reference
 only — the server must re-price.
 
-`VITE_PORTAL_URL` turns "Sign In" into a link to the client dashboard.
+**Accounts:** `/sign-in` calls `POST /api/auth/login` or `/api/auth/magic-link`, and `/portal` loads
+`GET /api/auth/me` + `GET /api/projects` (redirecting to sign-in on 401). Without the API, sign-in
+explains that accounts aren't live and links to the on-device workspace. `VITE_PORTAL_URL`, if set,
+points "Sign In" at an external portal instead.
 
 **Live chat (`/messages`)** uses the `ChatClient` interface in `src/services/chat.ts`. With the API
 configured it calls `GET/POST /api/conversations`, `GET/POST /api/conversations/:id/messages`,

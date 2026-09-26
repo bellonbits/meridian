@@ -1,5 +1,6 @@
 import { cx } from '../../utils/cx'
 import { initials } from './chatFormat'
+import './Avatar.css'
 
 interface AvatarProps {
   name: string

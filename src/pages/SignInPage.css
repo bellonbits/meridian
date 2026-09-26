@@ -1,0 +1,293 @@
+.signin {
+  padding-block: clamp(2rem, 1rem + 4vw, 5rem);
+  background:
+    radial-gradient(800px 500px at 90% 10%, rgba(61, 97, 224, 0.08), transparent 60%),
+    var(--paper);
+}
+
+.signin__grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 0;
+  max-width: calc(1120px + var(--gutter) * 2);
+}
+
+.signin__brand {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: var(--space-6);
+  min-height: 600px;
+  padding: clamp(2rem, 1rem + 3vw, 3.5rem);
+  border-radius: var(--radius-lg) 0 0 var(--radius-lg);
+  background:
+    radial-gradient(120% 80% at 80% 0%, rgba(61, 97, 224, 0.45), transparent 60%),
+    radial-gradient(80% 60% at 0% 100%, rgba(35, 149, 95, 0.2), transparent 60%),
+    var(--navy-900);
+  color: var(--ink-inverse);
+}
+
+.signin__brand .eyebrow {
+  color: var(--blue-200);
+}
+
+.signin__arc {
+  position: absolute;
+  top: -80px;
+  right: -110px;
+  width: 420px;
+  color: rgba(201, 213, 247, 0.16);
+}
+
+.signin__title {
+  font-size: var(--text-4xl);
+  line-height: 1.02;
+  max-width: 12ch;
+}
+
+.signin__title em {
+  color: var(--blue-200);
+}
+
+.signin__features {
+  display: grid;
+  gap: var(--space-3);
+  font-size: var(--text-sm);
+  color: rgba(245, 243, 238, 0.82);
+}
+
+.signin__features li {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.signin__features li > span {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--blue-200);
+}
+
+.signin__annot {
+  position: absolute;
+  top: 2rem;
+  left: clamp(2rem, 1rem + 3vw, 3.5rem);
+  font-size: 1.4rem;
+  color: #f0b89c;
+  transform: rotate(-4deg);
+}
+
+.signin__panel {
+  display: grid;
+  align-content: center;
+  gap: var(--space-4);
+  padding: clamp(1.5rem, 1rem + 3vw, 3.5rem);
+  border-radius: 0 var(--radius-lg) var(--radius-lg) 0;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-left: 0;
+  box-shadow: var(--shadow-lg);
+}
+
+.signin__card {
+  display: grid;
+  gap: var(--space-5);
+  width: 100%;
+  max-width: 400px;
+  margin-inline: auto;
+}
+
+.signin__card-title {
+  font-size: var(--text-3xl);
+}
+
+.signin__card-sub {
+  margin-top: calc(var(--space-4) * -1);
+  font-size: var(--text-sm);
+  color: var(--ink-3);
+}
+
+.signin__soon {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 0.8rem;
+  border-radius: var(--radius-sm);
+  background: var(--blue-50);
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--blue-800);
+}
+
+.signin__form {
+  display: grid;
+  gap: var(--space-4);
+}
+
+.signin__password {
+  position: relative;
+}
+
+.signin__password .control {
+  padding-right: 3rem;
+}
+
+.signin__toggle {
+  position: absolute;
+  right: 6px;
+  top: 30px;
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  color: var(--ink-3);
+}
+
+.signin__toggle:hover,
+.signin__toggle[aria-pressed='true'] {
+  color: var(--blue-700);
+}
+
+.signin__error {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 0.8rem;
+  border-radius: var(--radius-sm);
+  background: var(--danger-bg);
+  font-size: 0.8rem;
+  color: var(--danger);
+}
+
+.signin__divider {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  font-size: 0.75rem;
+  color: var(--ink-4);
+}
+
+.signin__divider::before,
+.signin__divider::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: var(--line);
+}
+
+.signin__result {
+  display: grid;
+  gap: var(--space-3);
+  padding: var(--space-5);
+  border-radius: var(--radius-md);
+  background: var(--paper);
+  animation: signin-in var(--dur-slow) var(--ease-out);
+}
+
+.signin__result h3 {
+  font-size: var(--text-xl);
+}
+
+.signin__result p {
+  font-size: var(--text-sm);
+  color: var(--ink-2);
+}
+
+.signin__result-icon {
+  display: grid;
+  place-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--blue-100);
+  color: var(--blue-700);
+}
+
+.signin__result-icon--ok {
+  background: var(--green-100);
+  color: var(--green-700);
+}
+
+.signin__result-actions {
+  display: grid;
+  gap: var(--space-2);
+  margin-top: var(--space-2);
+}
+
+.signin__back {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  justify-self: start;
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--ink-3);
+}
+
+.signin__back:hover {
+  color: var(--ink);
+}
+
+.signin__foot {
+  font-size: 0.82rem;
+  color: var(--ink-3);
+}
+
+.signin__foot a,
+.signin__legal a {
+  color: var(--blue-700);
+}
+
+.signin__legal {
+  max-width: 400px;
+  margin-inline: auto;
+  font-size: 0.72rem;
+  color: var(--ink-4);
+  text-align: center;
+}
+
+@keyframes signin-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+}
+
+@media (max-width: 899px) {
+  .signin__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .signin__brand {
+    min-height: 0;
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    padding-top: 4rem;
+  }
+
+  .signin__features {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .signin__panel {
+    border-radius: 0 0 var(--radius-lg) var(--radius-lg);
+    border-left: 1px solid var(--line);
+    border-top: 0;
+  }
+}
+
+@media (max-width: 599px) {
+  .signin__features {
+    grid-template-columns: 1fr;
+  }
+
+  .signin__title {
+    font-size: 2.2rem;
+  }
+}

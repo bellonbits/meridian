@@ -6,7 +6,6 @@ import { useScrolledPast } from '../../hooks/useScrollPosition'
 import { cx } from '../../utils/cx'
 import { Button } from '../ui/Button'
 import { Icon } from '../ui/Icon'
-import { useToast } from '../ui/Toast'
 import { Logo } from './Logo'
 import { MobileMenu } from './MobileMenu'
 import './Header.css'
@@ -17,7 +16,6 @@ export function Header() {
   const scrolled = useScrolledPast(12)
   const [menuOpen, setMenuOpen] = useState(false)
   const { startProject, openSearch } = useAppActions()
-  const notify = useToast()
 
   // ⌘K / Ctrl+K opens search.
   useEffect(() => {
@@ -31,12 +29,6 @@ export function Header() {
     return () => window.removeEventListener('keydown', onKey)
   }, [openSearch])
 
-  const signIn = () =>
-    notify({
-      tone: 'info',
-      title: 'Client portal launching soon',
-      message: 'Until then, your specialist will contact you by email about your project.',
-    })
 
   return (
     <header className={cx('header', scrolled && 'header--scrolled')}>
@@ -69,9 +61,9 @@ export function Header() {
               Sign In
             </a>
           ) : (
-            <button type="button" className="header__signin" onClick={signIn}>
+            <Link to={routes.signIn} className="header__signin">
               Sign In
-            </button>
+            </Link>
           )}
           <Button variant="success" size="sm" arrow onClick={() => startProject()} className="header__cta">
             Start a Project
@@ -89,7 +81,7 @@ export function Header() {
         </div>
       </div>
 
-      <MobileMenu open={menuOpen} onClose={() => setMenuOpen(false)} onSignIn={signIn} portalUrl={PORTAL_URL} />
+      <MobileMenu open={menuOpen} onClose={() => setMenuOpen(false)} portalUrl={PORTAL_URL} />
     </header>
   )
 }

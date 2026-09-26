@@ -24,6 +24,8 @@ export const router = createBrowserRouter([
       { path: 'academic-integrity', lazy: () => import('../pages/AcademicIntegrityPage').then((m) => ({ Component: m.default })) },
       { path: 'faq', lazy: () => import('../pages/FAQPage').then((m) => ({ Component: m.default })) },
       { path: 'start', lazy: () => import('../pages/StartProjectPage').then((m) => ({ Component: m.default })) },
+      { path: 'sign-in', lazy: () => import('../pages/SignInPage').then((m) => ({ Component: m.default })) },
+      { path: 'portal', lazy: () => import('../pages/PortalPage').then((m) => ({ Component: m.default })) },
       { path: 'messages', lazy: () => import('../pages/MessagesPage').then((m) => ({ Component: m.default })) },
       { path: 'contact', lazy: () => import('../pages/ContactPage').then((m) => ({ Component: m.default })) },
       { path: 'privacy', lazy: () => import('../pages/PrivacyPage').then((m) => ({ Component: m.default })) },

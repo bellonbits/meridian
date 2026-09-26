@@ -5,7 +5,7 @@ import { calculateEstimate } from '../utils/pricingCalculator'
 import { resolveDeadlineDays, validateProject } from '../utils/projectValidation'
 import { readStorage, writeStorage } from '../utils/storage'
 
-const STORAGE_KEY = 'meridian:project-draft:v1'
+export const PROJECT_DRAFT_KEY = 'meridian:project-draft:v1'
 
 export const initialProject: ProjectDraft = {
   academicLevel: '',
@@ -36,8 +36,9 @@ function reducer(state: ProjectDraft, action: Action): ProjectDraft {
   }
 }
 
-function loadDraft(): ProjectDraft {
-  const saved = readStorage<Partial<ProjectDraft> | null>(STORAGE_KEY, null)
+/** The builder draft saved on this device (also read by the client portal). */
+export function loadDraft(): ProjectDraft {
+  const saved = readStorage<Partial<ProjectDraft> | null>(PROJECT_DRAFT_KEY, null)
   return saved ? { ...initialProject, ...saved } : initialProject
 }
 
@@ -50,7 +51,7 @@ export function useProjectEstimator() {
   const [errors, setErrors] = useState<ProjectErrors>({})
 
   useEffect(() => {
-    const id = window.setTimeout(() => writeStorage(STORAGE_KEY, project), 300)
+    const id = window.setTimeout(() => writeStorage(PROJECT_DRAFT_KEY, project), 300)
     return () => window.clearTimeout(id)
   }, [project])
 
