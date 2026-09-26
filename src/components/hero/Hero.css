@@ -1,0 +1,178 @@
+.hero {
+  position: relative;
+  padding-top: clamp(2.5rem, 1rem + 4vw, 5rem);
+  padding-bottom: clamp(8rem, 6rem + 8vw, 12rem);
+  overflow: clip;
+}
+
+.hero__backdrop {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(to bottom, transparent 0, transparent calc(100% - 1px), var(--line) calc(100% - 1px)) 0 0 / 100% 32px,
+    radial-gradient(1200px 600px at 78% 10%, rgba(61, 97, 224, 0.07), transparent 60%);
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.55), transparent 85%);
+}
+
+.hero__arc {
+  position: absolute;
+  top: -20%;
+  left: -18%;
+  width: min(880px, 70vw);
+  color: rgba(27, 58, 160, 0.09);
+}
+
+.hero__grid {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, 1fr);
+  align-items: center;
+  gap: clamp(2rem, 1rem + 4vw, 6rem);
+}
+
+.hero__copy {
+  position: relative;
+  display: grid;
+  gap: var(--space-6);
+  max-width: 42rem;
+  container-type: inline-size;
+}
+
+.hero__title {
+  display: grid;
+  /* Sized to the copy column so "Sharper Thinking." always holds one line. */
+  font-size: clamp(2.4rem, 11.2cqi, 5.4rem);
+  line-height: 0.98;
+  letter-spacing: -0.03em;
+  font-weight: 420;
+}
+
+.hero__line {
+  display: block;
+  white-space: nowrap;
+  animation: hero-line-in 900ms var(--ease-out) both;
+}
+
+.hero__line:nth-child(2) {
+  animation-delay: 90ms;
+}
+
+.hero__line:nth-child(3) {
+  animation-delay: 180ms;
+}
+
+.hero__line--accent {
+  position: relative;
+  width: fit-content;
+}
+
+.hero__line--accent em {
+  font-style: italic;
+  color: var(--blue-700);
+  font-weight: 400;
+}
+
+.hero__underline {
+  position: absolute;
+  left: 2%;
+  right: 4%;
+  bottom: -0.06em;
+  width: 94%;
+  height: 0.16em;
+  color: var(--green-500);
+  stroke-dasharray: 320;
+  stroke-dashoffset: 320;
+  animation: hero-draw 1100ms 700ms var(--ease-out) forwards;
+}
+
+.hero__lede {
+  font-size: var(--text-lg);
+  line-height: 1.6;
+  color: var(--ink-3);
+  max-width: 34rem;
+}
+
+.hero__ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-top: var(--space-2);
+}
+
+.hero__margin {
+  position: absolute;
+  top: 3.2em;
+  right: -1.2rem;
+  font-size: 1.35rem;
+  transform: rotate(-6deg);
+  opacity: 0;
+  animation: hero-fade 800ms 1400ms var(--ease-out) forwards;
+}
+
+@media (max-width: 1279px) {
+  .hero__margin {
+    display: none;
+  }
+}
+
+@media (max-width: 1023px) {
+  .hero__grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-12);
+  }
+
+  .hero__copy {
+    max-width: 44rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .hero {
+    padding-bottom: var(--space-10);
+  }
+
+
+  .hero__lede {
+    font-size: var(--text-base);
+  }
+
+  .hero__ctas .btn {
+    flex: 1 1 100%;
+  }
+
+  .hero__arc {
+    width: 140vw;
+    left: -60%;
+    top: -12%;
+  }
+}
+
+@keyframes hero-line-in {
+  from {
+    opacity: 0;
+    transform: translateY(0.35em);
+  }
+}
+
+@keyframes hero-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes hero-fade {
+  to {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__underline {
+    stroke-dashoffset: 0;
+  }
+
+  .hero__margin {
+    opacity: 1;
+  }
+}

@@ -1,0 +1,118 @@
+.factors__grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--space-4);
+  align-items: start;
+}
+
+.factors__table {
+  padding: var(--space-6);
+  border-radius: var(--radius-md);
+  background: var(--paper);
+}
+
+.factors__table h3 {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  margin-bottom: var(--space-3);
+}
+
+.factors__table dl > div {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: 0.45rem 0;
+  border-bottom: 1px dashed var(--line-strong);
+  font-size: var(--text-sm);
+}
+
+.factors__table dl > div:last-child {
+  border-bottom: 0;
+}
+
+.factors__table dd {
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.factors__example {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: var(--space-10);
+  margin-top: var(--space-6);
+  padding: var(--space-8);
+  border-radius: var(--radius-lg);
+  background: var(--navy-900);
+  color: var(--ink-inverse);
+}
+
+.factors__example .eyebrow {
+  color: var(--blue-200);
+}
+
+.factors__example h3 {
+  font-size: var(--text-2xl);
+  line-height: 1.2;
+  margin-top: var(--space-3);
+}
+
+.factors__calc {
+  display: grid;
+}
+
+.factors__calc li {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding: 0.6rem 0;
+  border-bottom: 1px solid var(--navy-line);
+  font-size: var(--text-sm);
+  color: rgba(245, 243, 238, 0.75);
+}
+
+.factors__calc strong {
+  color: var(--ink-inverse);
+  font-weight: 600;
+}
+
+.factors__total {
+  border-bottom: 0 !important;
+  padding-top: var(--space-4) !important;
+}
+
+.factors__total span {
+  color: var(--ink-inverse);
+  font-weight: 600;
+}
+
+.factors__total strong {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  font-weight: 450;
+  line-height: 1;
+}
+
+@media (max-width: 1099px) {
+  .factors__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .factors__example {
+    grid-template-columns: 1fr;
+    gap: var(--space-5);
+  }
+}
+
+@media (max-width: 599px) {
+  .factors__grid {
+    grid-template-columns: 1fr;
+  }
+
+  .factors__example {
+    padding: var(--space-6);
+  }
+}

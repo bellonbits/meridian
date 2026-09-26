@@ -1,0 +1,156 @@
+.trust {
+  padding-block: var(--space-8) var(--section-y);
+}
+
+.trust__top {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  gap: clamp(2rem, 1rem + 4vw, 6rem);
+  align-items: end;
+  padding-bottom: var(--space-12);
+  border-bottom: 1px solid var(--line);
+}
+
+.trust__rating {
+  display: grid;
+  gap: var(--space-5);
+}
+
+.trust__title {
+  font-size: var(--text-3xl);
+  line-height: 1.1;
+  max-width: 18ch;
+}
+
+.trust__title em {
+  color: var(--blue-700);
+}
+
+.trust__score {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+}
+
+.trust__score-value {
+  font-family: var(--font-serif);
+  font-size: 3.5rem;
+  line-height: 1;
+  letter-spacing: -0.03em;
+}
+
+.trust__score-meta {
+  font-size: var(--text-sm);
+  color: var(--ink-3);
+  margin-top: 0.2rem;
+}
+
+/* Metrics */
+
+.metrics {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.metrics__item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding: 0 var(--space-5);
+  border-left: 1px solid var(--line);
+}
+
+.metrics__label {
+  order: 2;
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.metrics__value {
+  order: 1;
+  font-family: var(--font-serif);
+  font-size: var(--text-3xl);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+.metrics__detail {
+  order: 3;
+  font-size: 0.78rem;
+  color: var(--ink-3);
+}
+
+/* Testimonials — a staggered row that echoes floating cards */
+
+.trust__testimonials {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--space-5);
+  margin-top: var(--space-12);
+  align-items: start;
+}
+
+.trust__card-wrap:nth-child(even) {
+  margin-top: var(--space-8);
+}
+
+.trust__card-wrap,
+.trust__card-wrap .testimonial {
+  height: 100%;
+}
+
+.trust__disclosure {
+  margin-top: var(--space-16);
+  font-size: 0.75rem;
+  color: var(--ink-3);
+  text-align: center;
+}
+
+@media (max-width: 1099px) {
+  .trust__top {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+
+  .trust__testimonials {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .trust__card-wrap:nth-child(even) {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 767px) {
+  .metrics {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-6) 0;
+  }
+
+  .metrics__item:nth-child(odd) {
+    border-left: 0;
+    padding-left: 0;
+  }
+
+  /* Swipeable row of testimonials on phones */
+  .trust__testimonials {
+    display: flex;
+    gap: var(--space-4);
+    margin-inline: calc(var(--gutter) * -1);
+    padding: var(--space-2) var(--gutter) var(--space-4);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scrollbar-width: none;
+  }
+
+  .trust__testimonials::-webkit-scrollbar {
+    display: none;
+  }
+
+  .trust__card-wrap {
+    flex: 0 0 84%;
+    scroll-snap-align: center;
+  }
+}

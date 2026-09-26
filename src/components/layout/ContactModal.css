@@ -1,0 +1,55 @@
+.contact {
+  display: grid;
+  gap: var(--space-6);
+}
+
+.contact__channels {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-3);
+}
+
+.contact__channels li {
+  display: flex;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-md);
+  background: var(--paper);
+  font-size: 0.8125rem;
+  color: var(--ink-3);
+}
+
+.contact__channels svg {
+  flex: none;
+  margin-top: 2px;
+  color: var(--blue-600);
+}
+
+.contact__channels div {
+  display: grid;
+  min-width: 0;
+}
+
+.contact__channels strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.contact__channels a {
+  overflow-wrap: anywhere;
+}
+
+.contact__more {
+  font-size: var(--text-sm);
+  color: var(--ink-3);
+}
+
+.contact__more a {
+  color: var(--blue-700);
+}
+
+@media (max-width: 639px) {
+  .contact__channels {
+    grid-template-columns: 1fr;
+  }
+}

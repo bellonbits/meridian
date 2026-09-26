@@ -1,0 +1,32 @@
+main:focus {
+  outline: none;
+}
+
+/* Thin top bar while a lazy route chunk loads. */
+.route-progress {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background: var(--blue-600);
+  transform: scaleX(0);
+  transform-origin: left;
+  opacity: 0;
+  transition: opacity 200ms;
+}
+
+.route-progress[data-active='true'] {
+  opacity: 1;
+  animation: route-progress 1.2s var(--ease-out) forwards;
+}
+
+@keyframes route-progress {
+  from {
+    transform: scaleX(0.05);
+  }
+  to {
+    transform: scaleX(0.85);
+  }
+}

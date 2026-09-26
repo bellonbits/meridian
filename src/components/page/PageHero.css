@@ -1,0 +1,129 @@
+.page-hero {
+  position: relative;
+  overflow: clip;
+  padding: clamp(2rem, 1rem + 3vw, 4rem) 0 clamp(3rem, 2rem + 4vw, 6rem);
+  border-bottom: 1px solid var(--line);
+}
+
+.page-hero__rules {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(to bottom, transparent 0, transparent calc(100% - 1px), var(--line) calc(100% - 1px)) 0 0 / 100% 32px,
+    radial-gradient(900px 480px at 85% 0%, rgba(61, 97, 224, 0.07), transparent 60%);
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), transparent 90%);
+}
+
+.page-hero__grid {
+  position: relative;
+  display: grid;
+  gap: clamp(2rem, 1rem + 4vw, 5rem);
+  align-items: end;
+}
+
+.page-hero--split .page-hero__grid {
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.75fr);
+  align-items: center;
+}
+
+.page-hero__copy {
+  display: grid;
+  gap: var(--space-5);
+  max-width: 50rem;
+}
+
+.page-hero__title {
+  font-size: var(--text-4xl);
+  line-height: 1.02;
+  letter-spacing: -0.028em;
+  font-weight: 430;
+}
+
+.page-hero__title em {
+  font-style: italic;
+  color: var(--blue-700);
+}
+
+.page-hero__lede {
+  font-size: var(--text-lg);
+  color: var(--ink-3);
+  max-width: 40rem;
+}
+
+/* Breadcrumbs */
+
+.breadcrumbs ol {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.8rem;
+  color: var(--ink-3);
+}
+
+.breadcrumbs li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.breadcrumbs a {
+  text-decoration: none;
+  color: var(--ink-3);
+}
+
+.breadcrumbs a:hover {
+  color: var(--blue-700);
+  text-decoration: underline;
+}
+
+.breadcrumbs [aria-current='page'] {
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.breadcrumbs__sep {
+  transform: rotate(-90deg);
+  color: var(--ink-4);
+}
+
+/* Dark tone */
+
+.page-hero--dark {
+  background: var(--navy-900);
+  color: var(--ink-inverse);
+  border-bottom: 0;
+}
+
+.page-hero--dark .page-hero__rules {
+  opacity: 0.25;
+}
+
+.page-hero--dark .eyebrow,
+.page-hero--dark .page-hero__title em {
+  color: var(--blue-200);
+}
+
+.page-hero--dark .page-hero__lede,
+.page-hero--dark .breadcrumbs ol,
+.page-hero--dark .breadcrumbs a {
+  color: rgba(245, 243, 238, 0.7);
+}
+
+.page-hero--dark .breadcrumbs [aria-current='page'] {
+  color: var(--ink-inverse);
+}
+
+@media (max-width: 1023px) {
+  .page-hero--split .page-hero__grid {
+    grid-template-columns: 1fr;
+    align-items: start;
+  }
+}
+
+@media (max-width: 767px) {
+  .page-hero__lede {
+    font-size: var(--text-base);
+  }
+}

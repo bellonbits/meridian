@@ -1,0 +1,45 @@
+.logo {
+  --logo-accent: var(--blue-600);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  text-decoration: none;
+  color: var(--ink);
+  flex: none;
+}
+
+.logo--light {
+  --logo-accent: var(--blue-200);
+  color: var(--ink-inverse);
+}
+
+.logo__mark {
+  width: 34px;
+  height: 34px;
+  transition: transform var(--dur-slow) var(--ease-out);
+}
+
+.logo:hover .logo__mark {
+  transform: rotate(-12deg);
+}
+
+.logo__type {
+  display: grid;
+  line-height: 1;
+}
+
+.logo__name {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+
+.logo__sub {
+  margin-top: 3px;
+  font-size: 0.62rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  opacity: 0.7;
+}

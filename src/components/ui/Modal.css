@@ -1,0 +1,168 @@
+html.has-modal {
+  overflow: hidden;
+}
+
+.modal {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--ink);
+  max-width: none;
+  max-height: none;
+  overflow: visible;
+}
+
+.modal::backdrop {
+  background: rgba(8, 17, 30, 0.48);
+  backdrop-filter: blur(3px);
+  animation: modal-fade var(--dur) var(--ease-out);
+}
+
+.modal__panel {
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+}
+
+/* Centered dialog */
+
+.modal--dialog {
+  width: min(100vw - 2rem, var(--modal-w, 640px));
+  margin: auto;
+}
+
+.modal--sm {
+  --modal-w: 460px;
+}
+
+.modal--lg {
+  --modal-w: 860px;
+}
+
+.modal--dialog .modal__panel {
+  max-height: min(88vh, 900px);
+  border-radius: var(--radius-lg);
+  animation: modal-rise var(--dur-slow) var(--ease-out);
+}
+
+/* Side sheet */
+
+.modal--sheet {
+  width: min(100vw, 420px);
+  height: 100dvh;
+  margin: 0 0 0 auto;
+}
+
+.modal--sheet .modal__panel {
+  height: 100%;
+  animation: modal-slide var(--dur-slow) var(--ease-out);
+}
+
+.modal__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding: var(--space-6) var(--space-6) var(--space-4);
+  border-bottom: 1px solid var(--line-soft);
+}
+
+.modal__titles {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.modal__title {
+  font-size: var(--text-2xl);
+  line-height: 1.15;
+}
+
+.modal__description {
+  color: var(--ink-3);
+  font-size: var(--text-sm);
+}
+
+.modal__close {
+  display: grid;
+  place-items: center;
+  flex: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  color: var(--ink-2);
+  transition: background-color var(--dur-fast);
+}
+
+.modal__close:hover {
+  background: var(--paper);
+}
+
+.modal__body {
+  padding: var(--space-6);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  flex: 1;
+}
+
+.modal__footer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: var(--space-3);
+  padding: var(--space-4) var(--space-6);
+  border-top: 1px solid var(--line-soft);
+  background: var(--surface-muted);
+}
+
+@media (max-width: 767px) {
+  .modal--dialog {
+    width: 100vw;
+    margin: auto 0 0;
+  }
+
+  .modal--dialog .modal__panel {
+    max-height: 92dvh;
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    animation-name: modal-sheet-up;
+  }
+
+  .modal__header,
+  .modal__body {
+    padding-inline: var(--space-5);
+  }
+
+  .modal__footer {
+    padding-inline: var(--space-5);
+  }
+
+  .modal__footer > .btn {
+    flex: 1 1 100%;
+  }
+}
+
+@keyframes modal-fade {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes modal-rise {
+  from {
+    opacity: 0;
+    transform: translateY(16px) scale(0.985);
+  }
+}
+
+@keyframes modal-slide {
+  from {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes modal-sheet-up {
+  from {
+    transform: translateY(100%);
+  }
+}

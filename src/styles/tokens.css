@@ -1,0 +1,125 @@
+/* ==========================================================================
+   Meridian design tokens
+   Premium academic institution + technology company + consultancy.
+   ========================================================================== */
+
+:root {
+  /* Surfaces */
+  --paper: #f7f4ee;
+  --paper-deep: #efe9df;
+  --paper-edge: #e6dfd2;
+  --surface: #ffffff;
+  --surface-muted: #fbfaf7;
+  --surface-tint: #f3f5fb;
+
+  /* Ink */
+  --ink: #0e1a2b;
+  --ink-2: #33415a;
+  --ink-3: #5b6678;
+  --ink-4: #8a93a3;
+  --ink-inverse: #f5f3ee;
+
+  /* Lines */
+  --line: #dfe3ea;
+  --line-soft: #ebeef3;
+  --line-strong: #c5cdda;
+
+  /* Brand blue */
+  --blue-800: #152e80;
+  --blue-700: #1b3aa0;
+  --blue-600: #2447c6;
+  --blue-500: #3d61e0;
+  --blue-200: #c9d5f7;
+  --blue-100: #e5ebfb;
+  --blue-50: #f1f4fd;
+
+  /* Conversion green */
+  --green-700: #13653f;
+  --green-600: #187a4c;
+  --green-500: #23955f;
+  --green-100: #e0f1e8;
+  --green-50: #f0f8f3;
+
+  /* Navy (dark sections) */
+  --navy-950: #08111e;
+  --navy-900: #0c1828;
+  --navy-800: #13233a;
+  --navy-700: #1d3150;
+  --navy-line: rgba(245, 243, 238, 0.12);
+
+  /* Accents — used sparingly */
+  --annot: #b4532a;       /* marginal annotation ink */
+  --highlight: #fbeeb8;   /* text highlighter */
+  --star: #c48a1c;
+  --danger: #b42318;
+  --danger-bg: #fdf0ee;
+
+  /* Typography */
+  --font-serif: 'Newsreader', 'Iowan Old Style', 'Palatino Linotype', Georgia, serif;
+  --font-sans: 'Instrument Sans', 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-hand: 'Caveat', 'Bradley Hand', cursive;
+  --font-mono: ui-monospace, 'SF Mono', 'JetBrains Mono', Menlo, monospace;
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-md: 1.0625rem;
+  --text-lg: 1.1875rem;
+  --text-xl: clamp(1.25rem, 1.1rem + 0.5vw, 1.5rem);
+  --text-2xl: clamp(1.5rem, 1.25rem + 1vw, 2rem);
+  --text-3xl: clamp(2rem, 1.5rem + 2vw, 2.875rem);
+  --text-4xl: clamp(2.375rem, 1.6rem + 3.2vw, 4rem);
+  --text-display: clamp(2.75rem, 1.6rem + 4.6vw, 5.5rem);
+
+  --leading-tight: 1.04;
+  --leading-snug: 1.2;
+  --leading-body: 1.6;
+
+  /* Spacing (4px base) */
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+  --section-y: clamp(4.5rem, 3rem + 6vw, 9rem);
+
+  /* Radii — three steps, used consistently */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 22px;
+  --radius-pill: 999px;
+
+  /* Elevation */
+  --shadow-xs: 0 1px 2px rgba(14, 26, 43, 0.06);
+  --shadow-sm: 0 1px 2px rgba(14, 26, 43, 0.05), 0 4px 12px -4px rgba(14, 26, 43, 0.08);
+  --shadow-md: 0 2px 4px rgba(14, 26, 43, 0.04), 0 12px 32px -12px rgba(14, 26, 43, 0.16);
+  --shadow-lg: 0 4px 8px rgba(14, 26, 43, 0.04), 0 28px 64px -20px rgba(14, 26, 43, 0.24);
+  --shadow-focus: 0 0 0 3px var(--surface), 0 0 0 5px var(--blue-600);
+
+  /* Layout */
+  --container: 1240px;
+  --container-wide: 1400px;
+  --container-narrow: 820px;
+  --gutter: clamp(1rem, 0.5rem + 2.5vw, 2.5rem);
+  --header-h: 76px;
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast: 150ms;
+  --dur: 260ms;
+  --dur-slow: 520ms;
+}
+
+@media (max-width: 767px) {
+  :root {
+    --header-h: 64px;
+  }
+}

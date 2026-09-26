@@ -1,0 +1,126 @@
+.contact-page {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+  gap: clamp(2rem, 1rem + 4vw, 5rem);
+  align-items: start;
+}
+
+.contact-page__form {
+  display: grid;
+  gap: var(--space-6);
+  padding: clamp(1.5rem, 1rem + 2vw, 2.75rem);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow-md);
+}
+
+.contact-page__title {
+  font-size: var(--text-2xl);
+}
+
+.contact-page__aside {
+  display: grid;
+  gap: var(--space-8);
+}
+
+.contact-page__channels {
+  display: grid;
+  border-top: 1px solid var(--ink);
+}
+
+.contact-page__channels > div {
+  display: grid;
+  gap: 0.2rem;
+  padding: var(--space-4) 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.contact-page__channels dt {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+
+.contact-page__channels dt svg {
+  color: var(--blue-600);
+}
+
+.contact-page__channels dd {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  color: var(--ink);
+  overflow-wrap: anywhere;
+}
+
+.contact-page__channels a {
+  color: inherit;
+  text-decoration-color: var(--line-strong);
+}
+
+.contact-page__channels a:hover {
+  color: var(--blue-700);
+}
+
+.contact-page__shortcuts-title {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  margin-bottom: var(--space-3);
+}
+
+.contact-page__shortcuts ul {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.contact-page__shortcut {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  padding: var(--space-4) var(--space-5);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  text-decoration: none;
+  color: var(--ink);
+  transition: border-color var(--dur-fast), transform var(--dur) var(--ease-out);
+}
+
+.contact-page__shortcut:hover {
+  border-color: var(--blue-200);
+  transform: translateX(3px);
+}
+
+.contact-page__shortcut > span {
+  display: grid;
+  gap: 0.1rem;
+}
+
+.contact-page__shortcut strong {
+  font-weight: 600;
+}
+
+.contact-page__shortcut span span {
+  font-size: 0.82rem;
+  color: var(--ink-3);
+}
+
+.contact-page__shortcut svg {
+  flex: none;
+  color: var(--blue-600);
+}
+
+@media (max-width: 1023px) {
+  .contact-page {
+    grid-template-columns: 1fr;
+  }
+}

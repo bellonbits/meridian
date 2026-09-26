@@ -1,0 +1,117 @@
+.final-cta {
+  padding-block: 0 var(--section-y);
+}
+
+.final-cta__card {
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  gap: var(--space-12);
+  padding: clamp(2.5rem, 1.5rem + 5vw, 6.5rem) clamp(1.5rem, 1rem + 5vw, 6.5rem);
+  border-radius: calc(var(--radius-lg) + 6px);
+  background: #fffdf8;
+  border: 1px solid var(--paper-edge);
+  box-shadow: var(--shadow-md);
+}
+
+/* Ruled-paper lines with a margin rule */
+.final-cta__rules {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background:
+    linear-gradient(90deg, transparent calc(clamp(1rem, 4vw, 4.5rem) - 1px), rgba(180, 83, 42, 0.28) calc(clamp(1rem, 4vw, 4.5rem) - 1px), rgba(180, 83, 42, 0.28) clamp(1rem, 4vw, 4.5rem), transparent clamp(1rem, 4vw, 4.5rem)),
+    repeating-linear-gradient(to bottom, transparent 0 35px, rgba(36, 71, 198, 0.07) 35px 36px);
+}
+
+.final-cta__glyph {
+  position: absolute;
+  right: 3%;
+  top: 52%;
+  transform: translateY(-50%);
+  font-family: var(--font-serif);
+  font-size: clamp(14rem, 8rem + 20vw, 30rem);
+  line-height: 1;
+  color: rgba(27, 58, 160, 0.045);
+  pointer-events: none;
+  user-select: none;
+}
+
+.final-cta__note {
+  position: absolute;
+  top: clamp(1.5rem, 4vw, 3.5rem);
+  right: clamp(1.5rem, 6vw, 6rem);
+  font-size: 1.6rem;
+  transform: rotate(-5deg);
+}
+
+.final-cta__content {
+  position: relative;
+  display: grid;
+  gap: var(--space-6);
+  max-width: 44rem;
+}
+
+.final-cta__title {
+  font-size: var(--text-display);
+  line-height: 0.98;
+  letter-spacing: -0.03em;
+}
+
+.final-cta__title em {
+  color: var(--blue-700);
+}
+
+.final-cta__text {
+  font-size: var(--text-lg);
+  color: var(--ink-3);
+  max-width: 34rem;
+}
+
+.final-cta__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-3);
+  margin-top: var(--space-2);
+}
+
+.final-cta__footnotes {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-8);
+  padding-top: var(--space-5);
+  border-top: 1px solid var(--line);
+  font-family: var(--font-serif);
+  font-size: 0.92rem;
+  font-style: italic;
+  color: var(--ink-3);
+}
+
+.final-cta__footnotes sup {
+  font-style: normal;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  color: var(--blue-600);
+  margin-right: 0.2rem;
+}
+
+@media (max-width: 767px) {
+  .final-cta__note {
+    display: none;
+  }
+
+  .final-cta__title {
+    font-size: clamp(2.4rem, 1.5rem + 5vw, 3.2rem);
+  }
+
+  .final-cta__actions .btn {
+    flex: 1 1 100%;
+    white-space: normal;
+    text-align: center;
+  }
+
+  .final-cta__footnotes {
+    flex-direction: column;
+  }
+}

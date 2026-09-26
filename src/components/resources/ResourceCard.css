@@ -1,0 +1,121 @@
+.resource-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  height: 100%;
+  padding: var(--space-6) 0 var(--space-5);
+  border-top: 1px solid var(--ink);
+  transition: border-color var(--dur);
+}
+
+.resource-card:hover {
+  border-top-color: var(--blue-600);
+}
+
+.resource-card__meta {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-3);
+  font-size: 0.75rem;
+  color: var(--ink-3);
+}
+
+.resource-card__category {
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--blue-700);
+}
+
+.resource-card__time {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.resource-card__title {
+  font-size: 1.55rem;
+  line-height: 1.15;
+  transition: color var(--dur-fast);
+}
+
+.resource-card:hover .resource-card__title {
+  color: var(--blue-700);
+}
+
+.resource-card__desc {
+  font-size: var(--text-sm);
+  color: var(--ink-3);
+}
+
+.resource-card__cta {
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-top: auto;
+  padding-top: var(--space-3);
+  width: fit-content;
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.resource-card__cta::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+}
+
+.resource-card__cta svg {
+  transition: transform var(--dur) var(--ease-out);
+}
+
+.resource-card:hover .resource-card__cta svg {
+  transform: translate(2px, -2px);
+}
+
+.resource-card__cta:focus-visible {
+  outline: none;
+}
+
+.resource-card:has(.resource-card__cta:focus-visible) {
+  outline: 2px solid var(--blue-600);
+  outline-offset: 6px;
+  border-radius: 4px;
+}
+
+/* Featured: a darker, larger editorial block */
+
+.resource-card--featured {
+  padding: var(--space-8);
+  border-top: 0;
+  border-radius: var(--radius-lg);
+  background: var(--navy-900);
+  color: var(--ink-inverse);
+}
+
+.resource-card--featured .resource-card__meta,
+.resource-card--featured .resource-card__desc {
+  color: rgba(245, 243, 238, 0.7);
+}
+
+.resource-card--featured .resource-card__category {
+  color: var(--blue-200);
+}
+
+.resource-card--featured .resource-card__title {
+  font-size: var(--text-2xl);
+  line-height: 1.12;
+  margin-top: var(--space-6);
+}
+
+.resource-card--featured:hover .resource-card__title {
+  color: #fff;
+}
+
+.resource-card--featured .resource-card__cta {
+  color: var(--ink-inverse);
+  margin-top: var(--space-2);
+}

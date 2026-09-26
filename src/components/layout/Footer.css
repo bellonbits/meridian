@@ -1,0 +1,226 @@
+.footer {
+  position: relative;
+  overflow: hidden;
+  background: var(--navy-950);
+  color: rgba(245, 243, 238, 0.72);
+  padding-top: clamp(4rem, 3rem + 4vw, 7rem);
+}
+
+.footer a,
+.footer button {
+  color: inherit;
+  text-decoration: none;
+  transition: color var(--dur-fast);
+}
+
+.footer a:hover,
+.footer button:hover {
+  color: #fff;
+}
+
+.footer__top {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: var(--space-16);
+  padding-bottom: var(--space-12);
+  border-bottom: 1px solid var(--navy-line);
+}
+
+.footer__brand {
+  display: grid;
+  gap: var(--space-4);
+  align-content: start;
+}
+
+.footer__tagline {
+  font-family: var(--font-serif);
+  font-size: var(--text-3xl);
+  line-height: 1.1;
+  color: var(--ink-inverse);
+  margin-top: var(--space-6);
+  max-width: 16ch;
+}
+
+.footer__about {
+  max-width: 44ch;
+  font-size: var(--text-sm);
+}
+
+.footer__newsletter {
+  align-self: end;
+  display: grid;
+  gap: var(--space-2);
+  padding: var(--space-8);
+  border: 1px solid var(--navy-line);
+  border-radius: var(--radius-lg);
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.footer__news-title {
+  font-family: var(--font-serif);
+  font-size: var(--text-xl);
+  color: var(--ink-inverse);
+}
+
+.footer__news-text {
+  font-size: var(--text-sm);
+}
+
+.footer__news-field {
+  display: flex;
+  gap: var(--space-2);
+  margin-top: var(--space-3);
+  padding: 5px;
+  border: 1px solid rgba(245, 243, 238, 0.2);
+  border-radius: var(--radius-pill);
+}
+
+.footer__news-field:focus-within {
+  border-color: var(--blue-200);
+}
+
+.footer__news-field input {
+  flex: 1;
+  min-width: 0;
+  padding: 0 var(--space-4);
+  border: 0;
+  background: none;
+  color: var(--ink-inverse);
+}
+
+.footer__news-field input::placeholder {
+  color: rgba(245, 243, 238, 0.4);
+}
+
+.footer__news-field input:focus {
+  outline: none;
+}
+
+.footer .footer__news-field button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  min-height: 42px;
+  padding: 0 1.1rem;
+  border-radius: var(--radius-pill);
+  background: var(--ink-inverse);
+  color: var(--navy-900);
+  font-weight: 600;
+  font-size: var(--text-sm);
+}
+
+.footer .footer__news-field button:hover {
+  background: #fff;
+  color: var(--navy-900);
+}
+
+.footer__news-error {
+  color: #ffb4a8;
+  font-size: 0.8rem;
+}
+
+.footer__columns {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: var(--space-8);
+  padding-block: var(--space-12);
+}
+
+.footer__column-title {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(245, 243, 238, 0.45);
+  margin-bottom: var(--space-4);
+}
+
+.footer__column ul {
+  display: grid;
+  gap: 0.6rem;
+  font-size: var(--text-sm);
+}
+
+.footer__wordmark {
+  font-family: var(--font-serif);
+  font-size: clamp(5rem, 2rem + 16vw, 17rem);
+  line-height: 0.8;
+  letter-spacing: -0.04em;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(245, 243, 238, 0.12);
+  text-align: center;
+  user-select: none;
+  margin-bottom: -0.12em;
+}
+
+.footer__bottom {
+  position: relative;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  gap: var(--space-6);
+  align-items: center;
+  padding-block: var(--space-6);
+  border-top: 1px solid var(--navy-line);
+  font-size: 0.8rem;
+  background: var(--navy-950);
+}
+
+.footer__integrity {
+  color: rgba(245, 243, 238, 0.5);
+  text-align: center;
+}
+
+.footer__legal {
+  display: flex;
+  gap: var(--space-5);
+}
+
+@media (max-width: 1023px) {
+  .footer__top {
+    grid-template-columns: 1fr;
+    gap: var(--space-10);
+  }
+
+  .footer__columns {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .footer__bottom {
+    grid-template-columns: 1fr;
+    text-align: left;
+  }
+
+  .footer__integrity {
+    text-align: left;
+  }
+}
+
+@media (max-width: 639px) {
+  .footer__columns {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .footer__newsletter {
+    padding: var(--space-5);
+  }
+
+  .footer__news-field {
+    flex-direction: column;
+    border-radius: var(--radius-md);
+  }
+
+  .footer__news-field input {
+    min-height: 44px;
+  }
+
+  .footer .footer__news-field button {
+    justify-content: center;
+    border-radius: var(--radius-sm);
+  }
+
+  .footer__legal {
+    flex-wrap: wrap;
+    gap: var(--space-3) var(--space-5);
+  }
+}

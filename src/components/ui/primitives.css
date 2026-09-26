@@ -1,0 +1,97 @@
+/* ---------- Badge ---------- */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  padding: 0.3em 0.7em;
+  border-radius: var(--radius-pill);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+  white-space: nowrap;
+}
+
+.badge--neutral {
+  background: var(--paper-deep);
+  color: var(--ink-2);
+}
+
+.badge--blue {
+  background: var(--blue-100);
+  color: var(--blue-800);
+}
+
+.badge--green {
+  background: var(--green-100);
+  color: var(--green-700);
+}
+
+.badge--outline {
+  border: 1px solid var(--line-strong);
+  color: var(--ink-2);
+}
+
+.badge--dark {
+  background: rgba(245, 243, 238, 0.1);
+  color: var(--ink-inverse);
+}
+
+/* ---------- Section heading ---------- */
+
+.section-heading {
+  display: grid;
+  gap: var(--space-4);
+  max-width: 44rem;
+}
+
+.section-heading--center {
+  margin-inline: auto;
+  text-align: center;
+  justify-items: center;
+}
+
+.section-heading__title {
+  font-size: var(--text-4xl);
+  line-height: 1.06;
+  letter-spacing: -0.022em;
+}
+
+.section-heading__title em {
+  font-style: italic;
+  color: var(--blue-700);
+}
+
+.section-heading__lede {
+  font-size: var(--text-lg);
+  color: var(--ink-3);
+  max-width: 38rem;
+}
+
+.section-heading--dark .eyebrow {
+  color: var(--blue-200);
+}
+
+.section-heading--dark .section-heading__title em {
+  color: var(--blue-200);
+}
+
+.section-heading--dark .section-heading__lede {
+  color: rgba(245, 243, 238, 0.72);
+}
+
+/* ---------- Stars ---------- */
+
+.stars {
+  display: inline-flex;
+  gap: 2px;
+}
+
+.stars__on {
+  color: var(--star);
+}
+
+.stars__off {
+  color: var(--line-strong);
+}
