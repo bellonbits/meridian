@@ -38,6 +38,7 @@
 .header__link {
   position: relative;
   display: inline-block;
+  white-space: nowrap;
   padding: 0.5rem 0.7rem;
   font-size: var(--text-sm);
   font-weight: 500;
@@ -175,7 +176,7 @@
   }
 }
 
-@media (max-width: 1099px) {
+@media (max-width: 1199px) {
   .header__nav,
   .header__signin,
   .header__chat {

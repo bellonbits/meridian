@@ -1,4 +1,5 @@
 import { resources } from '../data/resources.ts'
+import { samples } from '../data/samples.ts'
 import { serviceItems } from '../data/services.ts'
 import { routes, site } from '../data/site.ts'
 
@@ -13,6 +14,8 @@ export function sitemapPaths(): string[] {
     routes.pricing,
     routes.resources,
     ...resources.map((r) => routes.resource(r.id)),
+    routes.samples,
+    ...samples.map((s) => routes.sample(s.id)),
     routes.about,
     routes.integrity,
     routes.faq,

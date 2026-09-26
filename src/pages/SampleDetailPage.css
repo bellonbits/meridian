@@ -1,0 +1,103 @@
+@import './SamplesPage.css';
+
+.sample-detail {
+  display: grid;
+  grid-template-columns: 300px minmax(0, 1fr);
+  gap: clamp(2rem, 1rem + 3vw, 4rem);
+  padding-block: clamp(2.5rem, 2rem + 3vw, 5rem);
+  align-items: start;
+}
+
+.sample-detail__aside {
+  position: sticky;
+  top: calc(var(--header-h) + 1.5rem);
+  display: grid;
+  gap: var(--space-6);
+  padding: var(--space-6);
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  border: 1px solid var(--line);
+}
+
+.sample-detail__facts {
+  display: grid;
+}
+
+.sample-detail__facts > div {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: 0.55rem 0;
+  border-bottom: 1px dashed var(--line);
+  font-size: var(--text-sm);
+}
+
+.sample-detail__facts dt {
+  color: var(--ink-3);
+}
+
+.sample-detail__facts dd {
+  font-weight: 600;
+  text-align: right;
+}
+
+.sample-detail__label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  margin-bottom: var(--space-3);
+}
+
+.sample-detail__shows .checklist li {
+  font-size: var(--text-sm);
+}
+
+.sample-detail__actions {
+  display: grid;
+  gap: var(--space-2);
+}
+
+.sample-detail__doc {
+  max-width: 860px;
+}
+
+@media (max-width: 1023px) {
+  .sample-detail {
+    grid-template-columns: 1fr;
+  }
+
+  .sample-detail__aside {
+    position: static;
+    order: 2;
+  }
+}
+
+/* Print only the document. */
+@media print {
+  .promo,
+  .header,
+  .footer,
+  .page-hero,
+  .sample-detail__aside,
+  .sample-more,
+  .skip-link,
+  .toasts {
+    display: none !important;
+  }
+
+  body {
+    background: #fff;
+  }
+
+  .sample-detail {
+    display: block;
+    padding: 0;
+  }
+
+  .sdoc {
+    box-shadow: none;
+    padding: 0;
+  }
+}

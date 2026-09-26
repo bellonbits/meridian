@@ -1,0 +1,24 @@
+/* Reuses the filter chip styles from the resources section. */
+@import '../components/resources/ResourceSection.css';
+
+.samples__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-5);
+}
+
+.samples__grid > li {
+  min-width: 0;
+}
+
+@media (max-width: 1023px) {
+  .samples__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 639px) {
+  .samples__grid {
+    grid-template-columns: 1fr;
+  }
+}

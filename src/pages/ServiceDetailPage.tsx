@@ -10,6 +10,7 @@ import { Reveal } from '../components/ui/primitives'
 import { useAppActions } from '../context/AppActions'
 import { faqsById } from '../data/faq'
 import { estimatorConfig, startingPriceFor } from '../data/pricing'
+import { samples } from '../data/samples'
 import { findService, serviceItems } from '../data/services'
 import { routes } from '../data/site'
 import { formatMoney } from '../utils/pricingCalculator'
@@ -27,6 +28,7 @@ export default function ServiceDetailPage() {
   const from = startingPriceFor(service.preset.service)
   const others = serviceItems.filter((s) => s.id !== service.id).slice(0, 3)
   const faqs = faqsById(service.faqIds)
+  const sample = samples.find((s) => s.service === service.id)
 
   return (
     <>
@@ -63,7 +65,12 @@ export default function ServiceDetailPage() {
               <Button variant="success" size="lg" arrow block onClick={() => startProject(service.preset)}>
                 Start with this service
               </Button>
-              <Button variant="secondary" icon="chat" block onClick={openContact}>
+              {sample && (
+                <Button to={routes.sample(sample.id)} variant="secondary" icon="doc" block>
+                  See a sample
+                </Button>
+              )}
+              <Button variant="ghost" icon="chat" block onClick={openContact}>
                 Ask a specialist
               </Button>
             </div>

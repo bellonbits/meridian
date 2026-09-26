@@ -20,6 +20,8 @@ export const router = createBrowserRouter([
       { path: 'pricing', lazy: () => import('../pages/PricingPage').then((m) => ({ Component: m.default })) },
       { path: 'resources', lazy: () => import('../pages/ResourcesPage').then((m) => ({ Component: m.default })) },
       { path: 'resources/:slug', lazy: () => import('../pages/ArticlePage').then((m) => ({ Component: m.default })) },
+      { path: 'samples', lazy: () => import('../pages/SamplesPage').then((m) => ({ Component: m.default })) },
+      { path: 'samples/:slug', lazy: () => import('../pages/SampleDetailPage').then((m) => ({ Component: m.default })) },
       { path: 'about', lazy: () => import('../pages/AboutPage').then((m) => ({ Component: m.default })) },
       { path: 'academic-integrity', lazy: () => import('../pages/AcademicIntegrityPage').then((m) => ({ Component: m.default })) },
       { path: 'faq', lazy: () => import('../pages/FAQPage').then((m) => ({ Component: m.default })) },

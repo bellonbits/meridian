@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router'
 import { useAppActions } from '../../context/AppActions'
 import { faqs } from '../../data/faq'
 import { resources } from '../../data/resources'
+import { samples } from '../../data/samples'
 import { serviceItems } from '../../data/services'
 import { routes } from '../../data/site'
 import { Icon } from '../ui/Icon'
@@ -11,7 +12,7 @@ import './SearchDialog.css'
 
 interface Entry {
   id: string
-  group: 'Services' | 'Guides' | 'Questions'
+  group: 'Services' | 'Samples' | 'Guides' | 'Questions'
   title: string
   text: string
   href: string
@@ -19,6 +20,7 @@ interface Entry {
 
 const index: Entry[] = [
   ...serviceItems.map((s) => ({ id: `s-${s.id}`, group: 'Services' as const, title: s.title, text: s.description, href: routes.service(s.id) })),
+  ...samples.map((s) => ({ id: `x-${s.id}`, group: 'Samples' as const, title: s.title, text: s.summary, href: routes.sample(s.id) })),
   ...resources.map((r) => ({ id: `r-${r.id}`, group: 'Guides' as const, title: r.title, text: r.description, href: routes.resource(r.id) })),
   ...faqs.map((f) => ({ id: `f-${f.id}`, group: 'Questions' as const, title: f.question, text: f.answer, href: `${routes.faq}#faq-${f.id}` })),
 ]

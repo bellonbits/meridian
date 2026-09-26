@@ -14,6 +14,8 @@ Vite + React 19 + TypeScript + React Router 7. Plain CSS with design tokens (no 
 | `/pricing` | Rate sheets, how estimates are calculated (live from config), pricing FAQs |
 | `/resources` | Guides with category filter |
 | `/resources/:slug` | Article (6) — table of contents, takeaways, related service, more guides |
+| `/samples` | Sample deliverables, filterable by service (`src/data/samples.ts`) |
+| `/samples/:slug` | Sample document (6) — details, what it shows, print / save as PDF |
 | `/about` | Studio, principles, specialist selection, trust |
 | `/academic-integrity` | What we do / don't do, policy in practice |
 | `/faq` | All questions grouped by category (+ FAQPage JSON-LD) |
