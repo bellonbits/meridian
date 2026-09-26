@@ -27,8 +27,10 @@ Routes are defined in `src/app/router.tsx`; every page is code-split. URL helper
 `routes` (`src/data/site.ts`). `sitemap.xml` and `robots.txt` are generated at build time from
 the route table and content data.
 
-**Hosting:** this is a client-side routed SPA. Configure the host to serve `index.html` for
-unknown paths (e.g. Netlify `/* /index.html 200`, Vercel rewrites, nginx `try_files $uri /index.html`).
+**Hosting:** this is a client-side routed SPA. `vercel.json` is included: it builds with Vite,
+rewrites page routes to `index.html` (static files are served first), caches hashed `/assets`
+for a year, and adds basic security headers. On other hosts, serve `index.html` for unknown paths
+(e.g. Netlify `/* /index.html 200`, nginx `try_files $uri /index.html`).
 
 ```bash
 npm install
